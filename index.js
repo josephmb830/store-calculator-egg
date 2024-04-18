@@ -7,9 +7,11 @@ for (let index = 1; index <= 3; index++) {
 
   const subtotal = cantidad * precio; // Calcular el subtotal
   totalApagar += subtotal; // Sumar el subtotal al total a pagar
+  alert(cantidad + " unidades de " + nombre + " = " + subtotal);
   console.log(cantidad + " unidades de " + nombre + " = " + subtotal);
 }
 
 const mensajeTotal = "El resultado del total a pagar es " + totalApagar;
 
+alert(mensajeTotal); // Mostrar el total a pagar
 console.log(mensajeTotal); // Mostrar el total a pagar
