@@ -31,6 +31,25 @@ class Product {
   set setSupplier(newName) {
     this._supplier = newName;
   }
+
+  sellUnits(units) {
+    if (units <= 0) {
+        console.log("El número de unidades debe ser positivo.");
+        alert("El número de unidades debe ser positivo.");
+        return;
+    }
+
+    if (this.stock >= units) {
+        this.stock -= units;
+        console.log(`Se vendieron ${units} unidades. Stock restante: ${this.stock}`);
+        alert(`Se vendieron ${units} unidades. Stock restante: ${this.stock}`);
+    } else {
+        console.log("Error: No hay suficiente stock para vender las unidades solicitadas.");
+        alert("Error: No hay suficiente stock para vender las unidades solicitadas.");
+        return;
+    }
+}
+
 }
 
 const prod1 = new Product();
@@ -45,6 +64,15 @@ const prod4 = new Product(
   15,
   "frilays"
 );
+const prod5 = new Product(
+  654,
+  "Coca-cola",
+  11,
+  12,
+  "cocacola_image",
+  5,
+  "coca-cola company"
+);
 
 console.log(prod1);
 alert(prod1);
@@ -58,6 +86,9 @@ alert(prod3);
 console.log(prod4);
 alert(prod4);
 
+console.log(prod5);
+alert(prod5);
+
 console.log(prod2.title);
 alert(prod2.title);
 
@@ -69,6 +100,23 @@ alert(prod4._supplier);
 
 prod4._supplier = "alicorp";
 
-// Imprimir el valor de los getters en la consola
-console.log("Supplier:", prod4._supplier); // Imprime: Supplier: alicorp
-alert("Supplier:", prod4._supplier); // Imprime: Supplier: alicorp
+// Vender 10 unidades
+prod5.sellUnits(10);
+
+// Vender 5 unidades
+prod5.sellUnits(5);
+
+// Obtener el valor del getter para el proveedor
+const supplier = prod4._supplier; // Asumiendo que prod4 es un objeto de clase con el atributo _supplier
+
+// Imprimir el valor del proveedor en la consola
+console.log("Supplier:", supplier); // Imprime: Supplier: alicorp
+
+// Crear un mensaje de alerta con el valor del proveedor
+const mensajeSupplier = `Supplier: ${supplier}`;
+
+// Mostrar una alerta con el mensaje
+alert(mensajeSupplier); // Muestra: Supplier: alicorp
+
+// Verificar el stock restante
+console.log(`Stock restante después de las ventas: ${prod5.stock}`);
