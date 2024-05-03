@@ -153,6 +153,15 @@ console.log(products);
 console.log(products[0]);
 // Accede al último elemento del array
 const lastProduct2 = products[products.length - 1];
-
 // Imprime la propiedad 'title' del último elemento
 console.log(lastProduct2.title);
+
+products.shift();
+products.pop();
+console.log(products);
+console.log(products[0]);
+// Accede al último elemento del array
+const lastProduct3 = products[products.length - 1];
+// Imprime la propiedad 'title' del último elemento
+console.log(lastProduct3.title);
+
