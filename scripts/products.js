@@ -78,6 +78,15 @@ const prod5 = new Product(
   5,
   "coca-cola company"
 );
+const prod6 = new Product(
+  463,
+  "Inca-cola",
+  9,
+  30,
+  "inca-kola_image",
+  7,
+  "lindley"
+);
 
 // console.log(prod1);
 // alert(prod1);
@@ -126,7 +135,7 @@ const prod5 = new Product(
 // // Verificar el stock restante
 // console.log(`Stock restante después de las ventas: ${prod5.stock}`);
 
-const products = [prod1, prod2, prod3, prod4, prod5];
+const products = [prod1, prod2, prod3, prod4];
 
 console.log(products);
 console.log(products[1]);
@@ -135,3 +144,15 @@ const lastProduct = products[products.length - 1];
 
 // Imprime la propiedad 'title' del último elemento
 console.log(lastProduct.title);
+
+products.unshift(prod5);
+
+products.push(prod6);
+
+console.log(products);
+console.log(products[0]);
+// Accede al último elemento del array
+const lastProduct2 = products[products.length - 1];
+
+// Imprime la propiedad 'title' del último elemento
+console.log(lastProduct2.title);
