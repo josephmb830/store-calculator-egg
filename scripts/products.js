@@ -14,7 +14,7 @@
 // alert(producto1.nombre);
 
 class Product {
-  constructor(id, title, price, stock, images, onsale, supplier) {
+  constructor(id, title, price, stock, images, onsale, supplier, colors, description) {
     this.id = id;
     this.title = title;
     this.price = price;
@@ -22,6 +22,8 @@ class Product {
     this.images = images;
     this.onsale = onsale;
     this._supplier = supplier;
+    this._colors = colors;
+    this._description = description;
   }
 
   get getSupplier() {
@@ -57,35 +59,35 @@ class Product {
   }
 }
 
-const prod1 = new Product(222, "helado", 45, 4, "helado_image", 15, "pesiduri");
-const prod2 = new Product(455, "manzana", 30, 3, "manzana_image", 10, "rojita");
-const prod3 = new Product(40, "pera", 55, 3, "image", 20, "verde");
+const prod1 = new Product(222, "helado", 45, 4, ["helado_image1", "helado_image2", "helado_image3"], 15, "pesiduri", ["azul", "verde", "crema"], "disfruta el sabor del helado de chicle, menta y vainilla");
+const prod2 = new Product(455, "manzana", 30, 3, ["manzana_image1", "manzana_image2"], 10, "Huerta feliz", ["roja", "verde"], "Disfruta nuestras manzanas rojas y verdes frescas" );
+const prod3 = new Product(40, "pera", 55, 3, ["perita_image1", "perita_image2"], 20, "cultivo maestro", ["verde", "amarillo"], "Disfruta de nuestras peras verdes y amarillas frescas");
 const prod4 = new Product(
   80,
   "papitas",
   2.5,
   20,
-  "papita_image",
+  ["papita_image1", "papita_image2", "papita_image3"],
   15,
-  "frilays"
+  "frilays", ["moradas", "amarillas", "verdes"], "Disfruta del sabor andino de nuestras papitas moradas y amarillas"
 );
 const prod5 = new Product(
   654,
   "Coca-cola",
   11,
   12,
-  "cocacola_image",
+  ["cocacola_image1", "cocacola_image2"],
   5,
-  "coca-cola company"
+  "coca-cola company", ["negro", "marrón"], "Disfruta del sabor de la coca-cola original"
 );
 const prod6 = new Product(
   463,
   "Inca-cola",
   9,
   30,
-  "inca-kola_image",
+  ["inca-kola_image1", "inca-kola_image2"],
   7,
-  "lindley"
+  "lindley", ["amarillo", "moradita"], "Una rica inca kola siempre cae bien en las comidas"
 );
 
 // console.log(prod1);
